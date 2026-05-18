@@ -20,6 +20,12 @@ app.use("/api/contact/:id", contactRoutes);
 
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+  res.send({
+    activeStatus:true,
+    error:false,
+  });
+});
 
 // DATABASE
 mongoose.connect(process.env.MONGO_URI)
